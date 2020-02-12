@@ -9,10 +9,21 @@ class plgSystemSitesauce extends JPlugin
      */
     protected $app;
 
-    /***
-     * @param $context
-     * @return array|void
-     */
+    public function onContentAfterSave()
+    {
+        $this->automaticDeploy();
+    }
+
+    public function onContentAfterDelete()
+    {
+        $this->automaticDeploy();
+    }
+
+    public function onContentChangeState()
+    {
+        $this->automaticDeploy();
+    }
+
     public function onGetIcons($context)
     {
         if ($context !== 'mod_quickicon') {
@@ -83,5 +94,14 @@ class plgSystemSitesauce extends JPlugin
 
         $this->app->enqueueMessage('PLG_SYSTEM_SITESAUCE_DEPLOY_FAILED');
         $this->app->redirect(\JRoute::_('index.php', false));
+    }
+
+    protected function automaticDeploy()
+    {
+        if (!$this->params->get('autodeploy', false)) {
+            return;
+        }
+
+        JHttpFactory::getHttp()->get($this->params->get('build_hook'));
     }
 }
