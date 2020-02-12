@@ -9,7 +9,7 @@ Joomla 4 support is not tested yet.
 
 ## Installation
 
-You can install this plugin from the Joomla! Installer by downloading the latest release from the Releases Section here on Github.
+You can install this plugin from the Joomla! Installer by [downloading the latest release from the Releases Section here on Github](https://github.com/sitesauce/joomla/releases).
 
 ## Setting your Build Hook
 
