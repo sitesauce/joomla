@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+    <name>System - Sitesauce</name>
+    <version>1.0.0</version>
+    <description>Sitesauce plugin for Joomla!</description>
+    <creationDate>February 2020</creationDate>
+    <copyright>Copyright (C) Sitesauce</copyright>
+    <license>GNU General Public License v2+</license>
+    <author>Daniele Rosario</author>
+    <authorEmail>daniele@weble.it</authorEmail>
+    <authorUrl>https://sitesauce.app</authorUrl>
+    <files>
+        <filename plugin="sitesauce">sitesauce.php</filename>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_sitesauce.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_sitesauce.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="build_hook" type="text" default="" size="255" label="PLG_SYSTEM_SITESAUCE_BUILD_HOOK_LABEL" description="PLG_SYSTEM_SITESAUCE_BUILD_HOOK_DESC" />
+                <field name="enable_quickicon" type="list" default="1" size="255" label="PLG_SYSTEM_SITESAUCE_ENABLE_QUICKICON_LABEL" description="PLG_SYSTEM_SITESAUCE_ENABLE_QUICKICON_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="quickicon_label" type="text" default="Deploy Static Site" size="255" label="PLG_SYSTEM_SITESAUCE_QUICKICON_LABEL_LABEL" description="PLG_SYSTEM_SITESAUCE_QUICKICON_LABEL_DESC" />
+                <field name="quickicon_icon" type="text" default="star" size="255" label="PLG_SYSTEM_SITESAUCE_QUICKICON_ICON_LABEL" description="PLG_SYSTEM_SITESAUCE_QUICKICON_ICON_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
